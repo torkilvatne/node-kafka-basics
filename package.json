@@ -1,0 +1,26 @@
+{
+  "name": "kafka-basics",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:producer": "node ./producer/index.js",
+    "start:consumer": "node ./consumer/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/torkilvatne/node-kafka-basics.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/torkilvatne/node-kafka-basics/issues"
+  },
+  "homepage": "https://github.com/torkilvatne/node-kafka-basics#readme",
+  "dependencies": {
+    "avsc": "^5.7.4",
+    "node-rdkafka": "^2.12.0"
+  }
+}
