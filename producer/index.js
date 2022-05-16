@@ -9,8 +9,21 @@ const stream = Kafka.Producer.createWriteStream(
     { topic: 'test' }
 );
 
+function getRandomCategory() {
+    const valids = ['CAT', 'DOG'];
+    return valids[Math.floor(Math.random() * valids.length)];
+}
+
+function getRandomName() {
+    const valids = ['Torkil', 'Eric', 'Ole', 'Petter', 'Heidi'];
+    return valids[Math.floor(Math.random() * valids.length)];
+}
+
 function queueMessage() {
-    const event = { category: 'DOG', name: 'Basko' }
+    const category = getRandomCategory();
+    const name = getRandomName();
+    console.log(category, name);
+    const event = { category: category, name: name }
     const success = stream.write(eventType.toBuffer(event));
     if (success) {
         console.log('message wrote to stream...');
